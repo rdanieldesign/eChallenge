@@ -9,6 +9,11 @@ ul, li {
   padding: 0;
 }
 
+h1, h2, h3, h4 , h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 // Custom Styles
 body {
   background: #fafafa;
@@ -16,9 +21,7 @@ body {
   color: #333;
 }
 
-.container {
-
-}
+.container {}
 
 .grid {
 
@@ -26,8 +29,82 @@ body {
     display: inline-block;
     height: 15px;
     width: 15px;
-    background-color: black;
+    background-color: white;
     margin-right: 4px;
-    border-radius: 50%;
+    margin-bottom: 4px;
+    position: relative;
+
+    &:hover {
+      z-index: 99;
+
+      h6 {
+        display: inline-block;
+      }
+    }
+  }
+
+  h6 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+}
+
+// Data Styles
+
+.grid {
+
+  .tornado {
+    background-color: red;
+  }
+
+  .hail {
+    background-color: blue;
+  }
+
+  .storm-wind {
+    background-color: green;
+  }
+
+  .lightning {
+    background-color: yellow;
+  }
+
+  .wildfire {
+    background-color: orange;
+  }
+
+  .hurricane {
+    background-color: purple;
+  }
+
+  .flooding {
+    background-color: lightblue;
+  }
+
+  .wind {
+    background-color: grey;
+  }
+
+  .winter {
+    background-color: lightgrey;
+  }
+
+  .heat {
+    background-color: black;
+  }
+
+  .coastal {
+    background-color: brown;
+  }
+
+  .drought {
+    background-color: pink;
+  }
+
+  .storm {
+    background-color: violet;
   }
 }
