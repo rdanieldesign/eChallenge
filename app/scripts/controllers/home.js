@@ -12,6 +12,10 @@
 			return x.FATALITIES >= $scope.deathsLow && x.FATALITIES <= $scope.deathsHigh;
 		};
 
+		$scope.injuryFilter = function(x){
+			return x.INJURIES >= $scope.injuryLow && x.FATALITIES <= $scope.injuryHigh;
+		};
+
 	}]);
 
 }());
