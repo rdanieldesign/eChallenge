@@ -15,7 +15,6 @@
 			organizeData: organizeData
 		};
 
-
 	}]);
 
 }());

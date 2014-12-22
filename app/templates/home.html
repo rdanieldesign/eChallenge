@@ -1,9 +1,19 @@
 <ul class="grid">
-	<li ng-repeat="disaster in disasters | filter:disasterType" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}">
+	<li ng-repeat="disaster in disasters | filter:disasterType | filter:deathFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}">
 		<h6>{{ disaster.HAZARD_TYPE_COMBO }}</h6>
 	</li>
 	<li ng-show="!disasters.length"> No Results Available </li>
 </ul>
+<!-- Tool Bar -->
 <div class="toolBar">
+	<!-- Deaths Slider -->
+	<slider
+	ng-model="deathsLow"
+	ng-model-range="deathsHigh"
+	floor="0"
+	ceiling="20"></slider>
+	<!-- End Deaths Slider -->
+	<!-- Type Filter -->
 	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type">
+	<!-- End Type Filter -->
 </div>

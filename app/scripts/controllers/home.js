@@ -8,6 +8,10 @@
 
 		console.log($scope.disasters);
 
+		$scope.deathFilter = function(x){
+			return x.FATALITIES >= $scope.deathsLow && x.FATALITIES <= $scope.deathsHigh;
+		};
+
 	}]);
 
 }());

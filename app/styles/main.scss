@@ -64,6 +64,27 @@ body {
   bottom: 0;
 }
 
+// Slider Styles
+
+slider {
+  right: 15px;
+  top: 15px;
+  position: absolute;
+  background-color: white;
+  width: 50%;
+  height: 10px;
+}
+
+.bubble {
+  background-color: white;
+  border: 1px solid red;
+  top: -5px;
+}
+
+::-ms-tooltip {
+  display: none;
+}
+
 // Data Styles
 
 .grid {
