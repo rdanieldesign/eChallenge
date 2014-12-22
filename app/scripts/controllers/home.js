@@ -2,9 +2,11 @@
 
 	angular.module('GAdisasters')
 
-	.controller('Home', ['$scope', function($scope){
+	.controller('Home', ['$scope', 'HomeFactory', function($scope, HomeFactory){
 
-		
+		$scope.disasters = HomeFactory.organizeData(disasters);
+
+		console.log($scope.disasters);
 
 	}]);
 
