@@ -1,5 +1,5 @@
 <ul class="grid">
-	<li ng-repeat="disaster in disasters | filter:disasterType | filter:deathFilter | filter:injuryFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}">
+	<li ng-repeat="disaster in disasters | filter:disasterType | filter:deathFilter | filter:injuryFilter | filter:propertyFilter | filter:cropFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}">
 		<h6>{{ disaster.HAZARD_TYPE_COMBO }}</h6>
 	</li>
 	<li ng-show="!disasters.length"> No Results Available </li>
@@ -20,6 +20,20 @@
 	floor="0"
 	ceiling="20"></slider>
 	<!-- End Injury Slider -->
+	<!-- Property Slider -->
+	<slider id="propertySlider"
+	ng-model="propertyLow"
+	ng-model-range="propertyHigh"
+	floor="0"
+	ceiling="25000000"></slider>
+	<!-- End Property Slider -->
+	<!-- Crop Slider -->
+	<slider id="cropSlider"
+	ng-model="cropLow"
+	ng-model-range="cropHigh"
+	floor="0"
+	ceiling="100000000"></slider>
+	<!-- End Crop Slider -->
 	<!-- Type Filter -->
 	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type">
 	<!-- End Type Filter -->
