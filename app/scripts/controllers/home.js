@@ -12,8 +12,6 @@
 
 		$scope.disasters2012 = HomeFactory.yearDivide(disasters, 2012);
 
-		console.log($scope.disasters);
-
 		$scope.deathsLow = 0;
 		$scope.deathsHigh = 18;
 		$scope.deathFilter = function(x){

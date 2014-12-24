@@ -34,7 +34,7 @@ body {
     height: 15px;
     width: 15px;
     background-color: white;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     margin-right: 1px;
     position: relative;
     -webkit-transition:  -webkit-transform .2s ease-out;
@@ -176,6 +176,17 @@ body {
 
 }
 
+// Range Defaults
+
+input[type=range]{
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  opacity: 0;
+}
+
 // Slider Styles
 
 slider {
@@ -183,12 +194,53 @@ slider {
   background-color: white;
   width: 50%;
   height: 10px;
+  border-radius: 4px;
 }
 
 .bubble {
+  display: none !important;
+  content: "" !important;
   background-color: white;
   border: 1px solid red;
   top: -5px;
+  z-index: 100 !important;
+}
+
+.floor, .ceiling {
+  display: none !important;
+}
+
+input.selection {
+  opacity: 1 !important;
+  background-color: HSLA(0, 80%, 70%, 1);
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7.5px 8px 7.5px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7.5px 0 7.5px 8px;
+    border-color: transparent transparent transparent white;
+  }
+}
+
+.bubble.selection {
+  opacity: 0;
 }
 
 .middle {
