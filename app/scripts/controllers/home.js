@@ -13,7 +13,7 @@
 		$scope.disasters2012 = HomeFactory.yearDivide(disasters, 2012);
 
 		$scope.deathsLow = 0;
-		$scope.deathsHigh = 18;
+		$scope.deathsHigh = 8;
 		$scope.deathFilter = function(x){
 			return x.FATALITIES >= $scope.deathsLow && x.FATALITIES <= $scope.deathsHigh;
 		};
@@ -35,7 +35,6 @@
 		$scope.cropFilter = function(x){
 			return x.CROP_DAMAGE >= $scope.cropLow && x.CROP_DAMAGE <= $scope.cropHigh;
 		};
-
 
 	}]);
 

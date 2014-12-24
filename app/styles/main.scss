@@ -151,7 +151,7 @@ body {
 // Filters
 
 .toolBar {
-  background-color: HSLA(0, 0%, 0%, .7);
+  background-color: HSLA(0, 0%, 0%, .85);
   display: block;
   padding: 10px;
   width: 100%;
@@ -182,9 +182,20 @@ input[type=range]{
   -webkit-appearance: none;
 }
 
+input[type=range]::-webkit-slider-runnable-track {
+  width: auto;
+  height: 10px;
+  background: HSLA(0, 80%, 70%, 1);
+  border: none;
+}
+
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  opacity: 0;
+/*   width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 8px 7.5px 0;
+border-color: transparent white transparent transparent; */
 }
 
 // Slider Styles
