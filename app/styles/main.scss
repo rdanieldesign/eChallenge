@@ -2,6 +2,9 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+// Partials
+@import 'colors';
+
 // Standards
 ul, li {
   list-style: none;
@@ -16,41 +19,114 @@ h1, h2, h3, h4 , h5, h6 {
 
 // Custom Styles
 body {
-  background: #fafafa;
+  background: $black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
 }
 
 .container {}
 
 .grid {
-  margin-bottom: 60px;
+  padding: 4px;
+  margin-bottom: 120px;
 
   li {
     display: inline-block;
     height: 15px;
     width: 15px;
     background-color: white;
-    margin-right: 4px;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
+    margin-right: 1px;
     position: relative;
+    -webkit-transition:  -webkit-transform .2s ease-out;
+    -moz-transition: -moz-transform .2s ease-out;
+    -o-transition: -o-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out;
+    transition: transform .2s ease-out;
 
     &:hover {
-      z-index: 99;
+      -webkit-transform:scale(2);
+      -moz-transform:scale(2);
+      -o-transform:scale(2);
+      transform:scale(2);
+      border: 1px solid $black;
+      z-index: 6;
 
       .dropDown {
+        z-index: 3;
         display: block;
       }
+
+      &::before {
+        content: none;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -6px;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7.5px 0 7.5px 6px;
+      border-color: transparent transparent transparent inherit;
+      z-index: 5;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -7px;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7.5px 0 7.5px 6px;
+      border-color: transparent transparent transparent $black;
+      z-index: 4;
+    }
+  }
+
+  .divider {
+    background-color: $black;
+    color: white;
+    height: 15px;
+    width: 60px;
+    text-align: center;
+    font-size: 0.8em;
+    vertical-align: top;
+
+    &:hover {
+      -webkit-transform:none;
+      -moz-transform:none;
+      -o-transform:none;
+      transform:none;
+      border: none;
+      z-index: 1;
+    }
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      right: -11px;
     }
   }
 
   .dropDown {
     display: none;
     position: absolute;
-    top: 18px;
+    top: 100%;
     left: 0;
     width: 200px;
     margin-left: -95px;
+    padding: 8px 4px;
     background-color: white;
 
     &::before {
@@ -62,7 +138,7 @@ body {
       height: 0;
       border-style: solid;
       border-width: 0 7px 10px 7px;
-      border-color: transparent transparent black transparent;
+      border-color: transparent transparent white transparent;
     }
 
     h6 {
@@ -75,12 +151,29 @@ body {
 // Filters
 
 .toolBar {
-  background-color: grey;
+  background-color: HSLA(0, 0%, 0%, .7);
   display: block;
+  padding: 10px;
   width: 100%;
   height: 120px;
   position: fixed;
   bottom: 0;
+  z-index: 99;
+
+  input {
+    width: 25%;
+    height: 40px;
+    display: block;
+    padding-left: 10px;
+  }
+}
+
+#typeFilter {
+  margin-bottom: 10px;
+}
+
+#countyFilter {
+
 }
 
 // Slider Styles
@@ -131,54 +224,67 @@ slider {
 .grid {
 
   .tornado {
-    background-color: red;
+    background-color: $tornado;
+    color: $tornado;
   }
 
   .hail {
-    background-color: blue;
+    background-color: $hail;
+    color: $hail;
   }
 
   .storm-wind {
-    background-color: green;
+    background-color: $storm-wind;
+    color: $storm-wind;
   }
 
   .lightning {
-    background-color: yellow;
+    background-color: $lightning;
+    color: $lightning;
   }
 
   .wildfire {
-    background-color: orange;
+    background-color: $wildfire;
+    color: $wildfire;
   }
 
   .hurricane {
-    background-color: purple;
+    background-color: $hurricane;
+    color: $hurricane;
   }
 
   .flooding {
-    background-color: lightblue;
+    background-color: $flooding;
+    color: $flooding;
   }
 
   .wind {
-    background-color: grey;
+    background-color: $wind;
+    color: $wind;
   }
 
   .winter {
-    background-color: lightgrey;
+    background-color: $winter;
+    color: $winter;
   }
 
   .heat {
-    background-color: black;
+    background-color: $heat;
+    color: $heat;
   }
 
   .coastal {
-    background-color: brown;
+    background-color: $coastal;
+    color: $coastal;
   }
 
   .drought {
-    background-color: pink;
+    background-color: $drought;
+    color: $drought;
   }
 
   .storm {
-    background-color: violet;
+    background-color: $storm;
+    color: $storm;
   }
 }
