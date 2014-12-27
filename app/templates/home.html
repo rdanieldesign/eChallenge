@@ -42,34 +42,48 @@
 </ul>
 <!-- Tool Bar -->
 <div class="toolBar">
-	<!-- Deaths Slider -->
-	<slider id="deathSlider"
-	ng-model="deathsLow"
-	ng-model-range="deathsHigh"
-	floor="0"
-	ceiling="10"></slider>
-	<!-- End Deaths Slider -->
-	<!-- Injuries Slider -->
-	<slider id="injurySlider"
-	ng-model="injuryLow"
-	ng-model-range="injuryHigh"
-	floor="0"
-	ceiling="20"></slider>
-	<!-- End Injury Slider -->
-	<!-- Property Slider -->
-	<slider id="propertySlider"
-	ng-model="propertyLow"
-	ng-model-range="propertyHigh"
-	floor="0"
-	ceiling="25000000"></slider>
-	<!-- End Property Slider -->
-	<!-- Crop Slider -->
-	<slider id="cropSlider"
-	ng-model="cropLow"
-	ng-model-range="cropHigh"
-	floor="0"
-	ceiling="100000000"></slider>
-	<!-- End Crop Slider -->
+	<div class="sliders">
+		<!-- Deaths Slider -->
+		<div class="slideContainer">
+			<slider id="deathSlider"
+			ng-model="deathsLow"
+			ng-model-range="deathsHigh"
+			floor="0"
+			ceiling="10"></slider>
+			<span class="sliderTitle">Fatalities</span>
+		</div>
+		<!-- End Deaths Slider -->
+		<!-- Injuries Slider -->
+		<div class="slideContainer">
+			<slider id="injurySlider"
+			ng-model="injuryLow"
+			ng-model-range="injuryHigh"
+			floor="0"
+			ceiling="20"></slider>
+			<span class="sliderTitle">Injuries</span>
+		</div>
+		<!-- End Injury Slider -->
+		<!-- Property Slider -->
+		<div class="slideContainer">
+			<slider id="propertySlider"
+			ng-model="propertyLow"
+			ng-model-range="propertyHigh"
+			floor="0"
+			ceiling="25000000"></slider>
+			<span class="sliderTitle">Property Damage</span>
+		</div>
+		<!-- End Property Slider -->
+		<!-- Crop Slider -->
+		<div class="slideContainer">
+			<slider id="cropSlider"
+			ng-model="cropLow"
+			ng-model-range="cropHigh"
+			floor="0"
+			ceiling="100000000"></slider>
+			<span class="sliderTitle">Crop Damage</span>
+		</div>
+		<!-- End Crop Slider -->
+	</div>
 	<!-- Type Filter -->
 	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type">
 	<!-- End Type Filter -->
