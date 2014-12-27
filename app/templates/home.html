@@ -42,7 +42,9 @@
 </ul>
 <!-- Tool Bar -->
 <div class="toolBar">
-	<div class="sliders">
+	<div class="toolBarToggle" ng-click="showTools = !showTools" ng-hide="showTools">Show Tool Bar</div>
+	<div class="toolBarToggle" ng-click="showTools = !showTools" ng-show="showTools">Hide Tool Bar</div>
+	<div class="sliders" ng-show="showTools">
 		<!-- Deaths Slider -->
 		<div class="slideContainer">
 			<slider id="deathSlider"
@@ -85,10 +87,10 @@
 		<!-- End Crop Slider -->
 	</div>
 	<!-- Type Filter -->
-	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type">
+	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
 	<!-- End Type Filter -->
 	<!-- County Filter -->
-	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County">
+	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
 	<!-- End County Filter -->
 </div>
 <div class="key">
