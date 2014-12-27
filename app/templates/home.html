@@ -42,8 +42,29 @@
 </ul>
 <!-- Tool Bar -->
 <div class="toolBar">
-	<div class="toolBarToggle" ng-click="showTools = !showTools" ng-hide="showTools">Show Tool Bar</div>
-	<div class="toolBarToggle" ng-click="showTools = !showTools" ng-show="showTools">Hide Tool Bar</div>
+	<div class="toggle" ng-click="showTools = !showTools" ng-hide="showTools || showKey">Show Tool Bar</div>
+	<div class="toggle" ng-click="showKey = !showKey" ng-hide="showTools || showKey">Show Key</div>
+	<div class="toggleHeader" ng-click="showTools = !showTools" ng-show="showTools">Hide Tool Bar</div>
+	<div class="toggleHeader" ng-click="showKey = !showKey" ng-show="showKey">Hide Key</div>
+	<!-- Key	 -->
+	<div class="key" ng-show="showKey">
+		<ul>
+			<li class="tornado"></li>
+			<li class="hail"></li>
+			<li class="storm-wind"></li>
+			<li class="lightning"></li>
+			<li class="wildfire"></li>
+			<li class="hurricane"></li>
+			<li class="flooding"></li>
+			<li class="wind"></li>
+			<li class="winter"></li>
+			<li class="heat"></li>
+			<li class="coastal"></li>
+			<li class="drought"></li>
+			<li class="storm"></li>
+		</ul>
+	</div>
+	<!-- End Key -->
 	<div class="sliders" ng-show="showTools">
 		<!-- Deaths Slider -->
 		<div class="slideContainer">
