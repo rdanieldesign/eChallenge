@@ -2,7 +2,7 @@
 
 	angular.module('GAdisasters')
 
-	.controller('Home', ['$scope', 'HomeFactory', function($scope, HomeFactory){
+	.controller('Home', ['$scope', 'HomeFactory', '$window', function($scope, HomeFactory, $window){
 
 		// $scope.disasters = HomeFactory.organizeData(disasters);
 
@@ -34,6 +34,24 @@
 		$scope.cropHigh = 90000000;
 		$scope.cropFilter = function(x){
 			return x.CROP_DAMAGE >= $scope.cropLow && x.CROP_DAMAGE <= $scope.cropHigh;
+		};
+
+		$scope.dropDown = function(event){
+			var el = angular.element(event.target);
+			var leftDist = el.prop('offsetLeft')﻿;
+			var winWidth = $window.innerWidth
+			console.log(el.prop('offsetLeft'))﻿;
+			console.log($window.innerWidth);
+
+			if(leftDist <= 200){
+				el.addClass('leftBox');
+			}
+			else if(winWidth - leftDist <= 200){
+				el.addClass('rightBox');
+			}
+			else{
+				el.removeClass('leftBox rightBox');
+			}
 		};
 
 	}]);

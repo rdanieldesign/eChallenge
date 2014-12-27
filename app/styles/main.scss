@@ -119,11 +119,33 @@ body {
     }
   }
 
+  .leftBox {
+    .dropDown {
+      left: 0;
+      margin-left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  .rightBox {
+    .dropDown {
+      right: 0;
+      margin-left: 0;
+
+      &::before {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
   .dropDown {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
     width: 200px;
     margin-left: -95px;
     padding: 8px 4px;
