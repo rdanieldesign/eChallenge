@@ -43,10 +43,10 @@
 			console.log(el.prop('offsetLeft'))﻿;
 			console.log($window.innerWidth);
 
-			if(leftDist <= 200){
+			if(leftDist <= 120){
 				el.addClass('leftBox');
 			}
-			else if(winWidth - leftDist <= 200){
+			else if(winWidth - leftDist <= 120){
 				el.addClass('rightBox');
 			}
 			else{
