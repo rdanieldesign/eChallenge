@@ -6,6 +6,15 @@
 @import 'colors';
 
 // Standards
+
+body {
+  background: $black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
 ul, li {
   list-style: none;
   margin: 0;
@@ -17,22 +26,24 @@ h1, h2, h3, h4 , h5, h6 {
   padding: 0;
 }
 
-// Custom Styles
-body {
-  background: $black;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+p {
+  font-size: 1.4em;
+  line-height: 1.45em;
 }
+
+// Custom Styles
 
 .container {}
 
 .grid {
   padding: 4px;
+  margin-bottom: 60px;
 
   li {
     display: inline-block;
     height: 15px;
     width: 15px;
-    /* background-color: white; */
+    font-size: 1.2em;
     margin-bottom: 8px;
     margin-right: 1px;
     position: relative;
@@ -51,6 +62,10 @@ body {
       z-index: 6;
 
       .dropDown {
+        -webkit-transform:scale(.5);
+        -moz-transform:scale(.5);
+        -o-transform:scale(.5);
+        transform:scale(.5);
         z-index: 3;
         display: block;
       }
@@ -97,7 +112,6 @@ body {
     height: 15px;
     width: 60px;
     text-align: center;
-    font-size: 0.8em;
     vertical-align: top;
 
     &:hover {
@@ -150,6 +164,14 @@ body {
     padding: 8px 4px;
     background-color: white;
 
+    h6 {
+      color: $black;
+      font-size: 1.2em;
+      letter-spacing: 0;
+      display: block;
+      width: 100%;
+    }
+
     &::before {
       position: absolute;
       top: -10px;
@@ -161,11 +183,6 @@ body {
       border-width: 0 7px 10px 7px;
       border-color: transparent transparent white transparent;
     }
-
-    h6 {
-      display: block;
-      width: 100%;
-    }
   }
 }
 
@@ -173,10 +190,38 @@ body {
 
 .key {
 
+  p {
+    color: white;
+    width: 40%;
+    margin-top: 0;
+    margin-right: 2%;
+    float: left;
+  }
+
+  ul {
+    width: 50%;
+    display: inline-block;
+    float: right;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+
   li {
+    margin-bottom: 10px;
+  }
+
+  div {
+    vertical-align: middle;
     display: inline-block;
     height: 15px;
     width: 15px;
+    margin-right: 4px;
+  }
+
+  span {
+    vertical-align: middle;
+    color: white;
   }
 }
 
@@ -186,37 +231,52 @@ body {
   display: inline-block;
   color: white;
   padding-top: 10px;
-  margin-left: 20px;
+  margin-right: 20px;
   height: 40px;
   cursor: pointer;
+  font-size: 1.2em;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $tornado;
+    border-bottom: 1px solid $tornado;
+  }
 }
 
 .toggleHeader {
   display: block;
   color: white;
-  padding-top: 10px;
+  padding-top: 6px;
   margin-bottom: 20px;
   height: 40px;
   width: 100%;
   text-align: center;
   cursor: pointer;
+  font-size: 1.2em;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $tornado;
+    border-bottom: 1px solid $tornado;
+  }
 }
 
 .toolBar {
   background-color: HSLA(0, 0%, 0%, .85);
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
   width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 99;
 
   input {
+    font-size: 1.4em;
+    font-weight: 400;
+    padding-left: 10px;
     width: 40%;
     height: 50px;
     display: block;
-    padding-left: 10px;
-    margin-left: 20px;
   }
 }
 
@@ -233,7 +293,6 @@ body {
 
 .sliders {
   width: 50%;
-  margin-right: 20px;
   float: right;
   position: relative;
 }
@@ -268,9 +327,23 @@ body {
 }
 
 #propertySlider {
+
+  .bubble.high, .bubble.low {
+
+    &::before {
+      content: "$";
+    }
+  }
 }
 
 #cropSlider {
+
+  .bubble.high, .bubble.low {
+
+    &::before {
+      content: "$";
+    }
+  }
 }
 
 ::-ms-tooltip {

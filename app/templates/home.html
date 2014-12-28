@@ -42,26 +42,68 @@
 </ul>
 <!-- Tool Bar -->
 <div class="toolBar">
-	<div class="toggle" ng-click="showTools = !showTools" ng-hide="showTools || showKey">Show Tool Bar</div>
 	<div class="toggle" ng-click="showKey = !showKey" ng-hide="showTools || showKey">Show Key</div>
+	<div class="toggle" ng-click="showTools = !showTools" ng-hide="showTools || showKey">Show Tool Bar</div>
 	<div class="toggleHeader" ng-click="showTools = !showTools" ng-show="showTools">Hide Tool Bar</div>
 	<div class="toggleHeader" ng-click="showKey = !showKey" ng-show="showKey">Hide Key</div>
 	<!-- Key	 -->
 	<div class="key" ng-show="showKey">
+		<p>
+			This is a visual representation of every natural disaster that occurred in Georgia between 2010 and 2013. Incidents are organized chronologically and can be filtered in the tool bar by type, county, fatalities, injuries, property damage, and crop damage. Click on an individual incident for details.
+		</p>
 		<ul>
-			<li class="tornado"></li>
-			<li class="hail"></li>
-			<li class="storm-wind"></li>
-			<li class="lightning"></li>
-			<li class="wildfire"></li>
-			<li class="hurricane"></li>
-			<li class="flooding"></li>
-			<li class="wind"></li>
-			<li class="winter"></li>
-			<li class="heat"></li>
-			<li class="coastal"></li>
-			<li class="drought"></li>
-			<li class="storm"></li>
+			<li>
+				<div class="tornado"></div>
+				<span>Tornado</span>
+			</li>
+			<li>
+				<div class="hail"></div>
+				<span>Hail</span>
+			</li>
+			<li>
+				<div class="storm-wind"></div>
+				<span>Storm (Wind)</span>
+			</li>
+			<li>
+				<div class="lightning"></div>
+				<span>Lightning</span>
+			</li>
+			<li>
+				<div class="wildfire"></div>
+				<span>Wildfire</span>
+			</li>
+			<li>
+				<div class="hurricane"></div>
+				<span>Hurricane</span>
+			</li>
+			<li>
+				<div class="flooding"></div>
+				<span>Flood</span>
+			</li>
+			<li>
+				<div class="wind"></div>
+				<span>Wind</span>
+			</li>
+			<li>
+				<div class="winter"></div>
+				<span>Winter Weather</span>
+			</li>
+			<li>
+				<div class="heat"></div>
+				<span>Heat</span>
+			</li>
+			<li>
+				<div class="coastal"></div>
+				<span>Coastal</span>
+			</li>
+			<li>
+				<div class="drought"></div>
+				<span>Drought</span>
+			</li>
+			<li>
+				<div class="storm"></div>
+				<span>Thunder Storm</span>
+			</li>
 		</ul>
 	</div>
 	<!-- End Key -->
@@ -113,11 +155,4 @@
 	<!-- County Filter -->
 	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
 	<!-- End County Filter -->
-</div>
-<div class="key">
-	<h3>Natural Disasters in Georgia</h3>
-	<ul>
-		<li></li>
-	</ul>
-	<p>This is a visual representation of all of the natural disasters occuring in the state of Georgia between 2003 and 2008.</p>
 </div>
