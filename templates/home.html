@@ -1,0 +1,166 @@
+<ul class="grid">
+	<li class="divider">2010</li>
+	<li ng-repeat="disaster in disasters2010 | filter:disasterType | filter:disasterCounty | filter:deathFilter | filter:injuryFilter | filter:propertyFilter | filter:cropFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}" ng-click="dropDown($event); dropped = !dropped">
+		<div class="dropDown" ng-show="dropped" ng-mouseleave="dropped = !dropped">
+			<h5>{{ disaster.HAZARD_TYPE_COMBO }}</h5>
+			<p class="date">
+				{{ disaster.HAZARD_BEGIN_DATE }}
+				<span ng-if="disaster.HAZARD_BEGIN_DATE != disaster.HAZARD_END_DATE"> - {{ disaster.HAZARD_END_DATE	 }}</span>
+			</p>
+			<p class="county">{{ disaster.NAME }} County, {{ disaster.POSTAL_CODE }}</p>
+			<p>Injuries: {{ disaster.INJURIES	 }}</p>
+			<p>Fatalities: {{ disaster.FATALITIES	 }}</p>
+			<p>Property Damage: ${{ disaster.PROPERTY_DAMAGE	 }}</p>
+			<p>Crop Damage: ${{ disaster.CROP_DAMAGE	 }}</p>
+		</div>
+	</li>
+	<li class="divider">2011</li>
+	<li ng-repeat="disaster in disasters2011 | filter:disasterType | filter:disasterCounty | filter:deathFilter | filter:injuryFilter | filter:propertyFilter | filter:cropFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}" ng-click="dropDown($event); dropped = !dropped">
+		<div class="dropDown" ng-show="dropped" ng-mouseleave="dropped = !dropped">
+			<h5>{{ disaster.HAZARD_TYPE_COMBO }}</h5>
+			<p class="date">
+				{{ disaster.HAZARD_BEGIN_DATE }}
+				<span ng-if="disaster.HAZARD_BEGIN_DATE != disaster.HAZARD_END_DATE"> - {{ disaster.HAZARD_END_DATE	 }}</span>
+			</p>
+			<p class="county">{{ disaster.NAME }} County, {{ disaster.POSTAL_CODE }}</p>
+			<p>Injuries: {{ disaster.INJURIES	 }}</p>
+			<p>Fatalities: {{ disaster.FATALITIES	 }}</p>
+			<p>Property Damage: ${{ disaster.PROPERTY_DAMAGE	 }}</p>
+			<p>Crop Damage: ${{ disaster.CROP_DAMAGE	 }}</p>
+		</div>
+	</li>
+	<li class="divider">2012</li>
+	<li ng-repeat="disaster in disasters2012 | filter:disasterType | filter:disasterCounty | filter:deathFilter | filter:injuryFilter | filter:propertyFilter | filter:cropFilter" ng-class="{'tornado': disaster.HAZARD_TYPE_COMBO === 'Tornado', 'hail': disaster.HAZARD_TYPE_COMBO === 'Hail', 'storm-wind': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm - Wind', 'lightning': disaster.HAZARD_TYPE_COMBO === 'Lightning', 'wildfire': disaster.HAZARD_TYPE_COMBO === 'Wildfire', 'hurricane': disaster.HAZARD_TYPE_COMBO === 'Hurricane/Tropical Storm', 'flooding': disaster.HAZARD_TYPE_COMBO === 'Flooding', 'wind': disaster.HAZARD_TYPE_COMBO === 'Wind', 'winter': disaster.HAZARD_TYPE_COMBO === 'Winter Weather', 'heat': disaster.HAZARD_TYPE_COMBO === 'Heat', 'coastal': disaster.HAZARD_TYPE_COMBO === 'Coastal', 'drought': disaster.HAZARD_TYPE_COMBO === 'Drought', 'storm': disaster.HAZARD_TYPE_COMBO === 'Severe Storm/Thunder Storm'}" ng-click="dropDown($event); dropped = !dropped">
+		<div class="dropDown" ng-show="dropped" ng-mouseleave="dropped = !dropped">
+			<h5>{{ disaster.HAZARD_TYPE_COMBO }}</h5>
+			<p class="date">
+				{{ disaster.HAZARD_BEGIN_DATE }}
+				<span ng-if="disaster.HAZARD_BEGIN_DATE != disaster.HAZARD_END_DATE"> - {{ disaster.HAZARD_END_DATE	 }}</span>
+			</p>
+			<p class="county">{{ disaster.NAME }} County, {{ disaster.POSTAL_CODE }}</p>
+			<p>Injuries: {{ disaster.INJURIES	 }}</p>
+			<p>Fatalities: {{ disaster.FATALITIES	 }}</p>
+			<p>Property Damage: ${{ disaster.PROPERTY_DAMAGE	 }}</p>
+			<p>Crop Damage: ${{ disaster.CROP_DAMAGE	 }}</p>
+		</div>
+	</li>
+	<li class="divider">2013</li>
+</ul>
+<!-- Tool Bar -->
+<div class="toolBar">
+	<h1>Georgia Natural Disasters</h1>
+	<span class="years">(2010-2013)</span>
+	<div class="toggle" ng-click="showKey = !showKey" ng-hide="showTools || showKey">Show Key</div>
+	<div class="toggle" ng-click="showTools = !showTools" ng-hide="showTools || showKey">Show Filters</div>
+	<div class="toggleHeader" ng-click="showTools = !showTools" ng-show="showTools">Hide Filters</div>
+	<div class="toggleHeader" ng-click="showKey = !showKey" ng-show="showKey">Hide Key</div>
+	<!-- Key	 -->
+	<div class="key" ng-show="showKey">
+		<p>
+			This is a visual representation of every natural disaster that occurred in Georgia between 2010 and 2013. Incidents are organized chronologically and can be filtered in the tool bar by type, county, fatalities, injuries, property damage, and crop damage. Click on an individual incident for details.
+		</p>
+		<ul>
+			<li>
+				<div class="tornado"></div>
+				<span>Tornado</span>
+			</li>
+			<li>
+				<div class="hail"></div>
+				<span>Hail</span>
+			</li>
+			<li>
+				<div class="storm-wind"></div>
+				<span>Storm (Wind)</span>
+			</li>
+			<li>
+				<div class="lightning"></div>
+				<span>Lightning</span>
+			</li>
+			<li>
+				<div class="wildfire"></div>
+				<span>Wildfire</span>
+			</li>
+			<li>
+				<div class="hurricane"></div>
+				<span>Hurricane</span>
+			</li>
+			<li>
+				<div class="flooding"></div>
+				<span>Flood</span>
+			</li>
+			<li>
+				<div class="wind"></div>
+				<span>Wind</span>
+			</li>
+			<li>
+				<div class="winter"></div>
+				<span>Winter Weather</span>
+			</li>
+			<li>
+				<div class="heat"></div>
+				<span>Heat</span>
+			</li>
+			<li>
+				<div class="coastal"></div>
+				<span>Coastal</span>
+			</li>
+			<li>
+				<div class="drought"></div>
+				<span>Drought</span>
+			</li>
+			<li>
+				<div class="storm"></div>
+				<span>Thunder Storm</span>
+			</li>
+		</ul>
+	</div>
+	<!-- End Key -->
+	<div class="sliders" ng-show="showTools">
+		<!-- Deaths Slider -->
+		<div class="slideContainer">
+			<slider id="deathSlider"
+			ng-model="deathsLow"
+			ng-model-range="deathsHigh"
+			floor="0"
+			ceiling="10"></slider>
+			<span class="sliderTitle">Fatalities</span>
+		</div>
+		<!-- End Deaths Slider -->
+		<!-- Injuries Slider -->
+		<div class="slideContainer">
+			<slider id="injurySlider"
+			ng-model="injuryLow"
+			ng-model-range="injuryHigh"
+			floor="0"
+			ceiling="20"></slider>
+			<span class="sliderTitle">Injuries</span>
+		</div>
+		<!-- End Injury Slider -->
+		<!-- Property Slider -->
+		<div class="slideContainer">
+			<slider id="propertySlider"
+			ng-model="propertyLow"
+			ng-model-range="propertyHigh"
+			floor="0"
+			ceiling="25000000"></slider>
+			<span class="sliderTitle">Property Damage</span>
+		</div>
+		<!-- End Property Slider -->
+		<!-- Crop Slider -->
+		<div class="slideContainer">
+			<slider id="cropSlider"
+			ng-model="cropLow"
+			ng-model-range="cropHigh"
+			floor="0"
+			ceiling="100000000"></slider>
+			<span class="sliderTitle">Crop Damage</span>
+		</div>
+		<!-- End Crop Slider -->
+	</div>
+	<!-- Type Filter -->
+	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
+	<!-- End Type Filter -->
+	<!-- County Filter -->
+	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
+	<!-- End County Filter -->
+</div>
