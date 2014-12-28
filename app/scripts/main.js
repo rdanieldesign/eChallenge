@@ -1,6 +1,6 @@
 (function(){
 
-	angular.module('GAdisasters', ['ngRoute', 'vr.directives.slider'])
+	angular.module('GAdisasters', ['ngRoute', 'ngRangeSlider'])
 
 	.config(function($routeProvider){
 
