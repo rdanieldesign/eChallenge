@@ -14,8 +14,8 @@
 
 		$scope.deathRange = { from: 0, to: 10};
 		$scope.injuryRange = { from: 0, to: 20};
-		$scope.propertyRange = { from: 0, to: 2500};
-		$scope.cropRange = { from: 0, to: 1000};
+		$scope.propertyRange = { from: 0, to: 20};
+		$scope.cropRange = { from: 0, to: 90};
 
 		$scope.deathFilter = function(x){
 			return x.FATALITIES >= $scope.deathRange.from && x.FATALITIES <= $scope.deathRange.to;
@@ -26,11 +26,13 @@
 		};
 
 		$scope.propertyFilter = function(x){
-			return x.PROPERTY_DAMAGE >= $scope.propertyRange.from && x.PROPERTY_DAMAGE <= $scope.propertyRange.to;
+			var damage = x.PROPERTY_DAMAGE / 1000000;
+			return damage >= $scope.propertyRange.from && damage <= $scope.propertyRange.to;
 		};
 
 		$scope.cropFilter = function(x){
-			return x.CROP_DAMAGE >= $scope.cropRange.from && x.CROP_DAMAGE <= $scope.cropRange.to;
+			var damage = x.CROP_DAMAGE / 1000000;
+			return damage >= $scope.cropRange.from && damage <= $scope.cropRange.to;
 		};
 
 		$scope.dropDown = function(event){
