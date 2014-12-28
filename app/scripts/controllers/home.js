@@ -40,8 +40,6 @@
 			var el = angular.element(event.target);
 			var leftDist = el.prop('offsetLeft')﻿;
 			var winWidth = $window.innerWidth
-			console.log(el.prop('offsetLeft'))﻿;
-			console.log($window.innerWidth);
 
 			if(leftDist <= 120){
 				el.addClass('leftBox');
