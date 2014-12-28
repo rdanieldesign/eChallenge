@@ -5,6 +5,23 @@
 // Partials
 @import 'colors';
 
+// Mixins
+
+@mixin headline {
+  font-family: $cabin;
+  text-transform: uppercase;
+}
+
+@mixin serif {
+  font-style: italic;
+  font-family: Georgia, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+// Fonts
+$cabin: 'Cabin', sans-serif;
+
+
 // Standards
 
 body {
@@ -36,7 +53,7 @@ p {
 .container {}
 
 .grid {
-  padding: 4px;
+  padding: 6px;
   margin-bottom: 60px;
 
   li {
@@ -62,10 +79,6 @@ p {
       z-index: 6;
 
       .dropDown {
-        -webkit-transform:scale(.5);
-        -moz-transform:scale(.5);
-        -o-transform:scale(.5);
-        transform:scale(.5);
         z-index: 3;
         display: block;
       }
@@ -107,6 +120,7 @@ p {
   }
 
   .divider {
+    font-family: $cabin;
     background-color: $black;
     color: white;
     height: 15px;
@@ -159,23 +173,54 @@ p {
     display: none;
     position: absolute;
     top: 100%;
-    width: 200px;
-    margin-left: -95px;
-    padding: 8px 4px;
+    width: 120px;
+    margin-left: -55px;
+    padding: 10px 6px 11px 6px;
     background-color: white;
+    font-size: 50%;
+    border-radius: 1px;
 
-    h6 {
+    h5 {
+      @include headline;
       color: $black;
       font-size: 1.2em;
-      letter-spacing: 0;
-      display: block;
-      width: 100%;
+      text-align: center;
+      letter-spacing: .5px;
+      line-height: 1.2em;
+      padding-bottom: 9px;
+      margin-bottom: 3px;
+      border-bottom: 1px solid $tornado;
+    }
+
+    .date, .county {
+      @include serif;
+      margin: 0;
+      text-align: center;
+      font-size: 7px;
+      color: $black;
+    }
+
+    .date {
+    }
+
+    .county {
+      margin-bottom: 12px;
+      border-bottom: 1px solid $tornado;
+      padding-bottom: 3px
+    }
+
+    p {
+      text-align: left;
+      letter-spacing: 0.5px;
+      margin: 0 0 2px 0;
+      font-size: 7.5px;
+      color: $black;
     }
 
     &::before {
       position: absolute;
-      top: -10px;
-      left: 47.5%;
+      top: -5px;
+      left: 55px;
       content:"";
       width: 0;
       height: 0;
@@ -228,6 +273,7 @@ p {
 // Filters
 
 .toggle {
+  font-family: $cabin;
   display: inline-block;
   color: white;
   padding-top: 10px;
@@ -244,6 +290,7 @@ p {
 }
 
 .toggleHeader {
+  font-family: $cabin;
   display: block;
   color: white;
   padding-top: 6px;
@@ -271,6 +318,8 @@ p {
   z-index: 99;
 
   input {
+    @include serif;
+    color: $black;
     font-size: 1.4em;
     font-weight: 400;
     padding-left: 10px;
