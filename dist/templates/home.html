@@ -118,45 +118,49 @@
 	<div class="sliders" ng-show="showTools">
 		<!-- Deaths Slider -->
 		<div class="slideContainer">
-			<section data-range-slider class="range-slider" ng-model="deathRange" min="0" max="10"></section>
-			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="deathRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="deathRange.to" /></li>
-			</ul>
+			<slider id="deathSlider"
+			ng-model="deathsLow"
+			ng-model-range="deathsHigh"
+			floor="0"
+			ceiling="10"></slider>
+			<span class="sliderTitle">Fatalities</span>
 		</div>
 		<!-- End Deaths Slider -->
 		<!-- Injuries Slider -->
 		<div class="slideContainer">
-			<section data-range-slider class="range-slider" ng-model="injuryRange" min="0" max="20"></section>
-			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="injuryRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="injuryRange.to" /></li>
-			</ul>
+			<slider id="injurySlider"
+			ng-model="injuryLow"
+			ng-model-range="injuryHigh"
+			floor="0"
+			ceiling="20"></slider>
+			<span class="sliderTitle">Injuries</span>
 		</div>
 		<!-- End Injury Slider -->
 		<!-- Property Slider -->
 		<div class="slideContainer">
-			<section data-range-slider class="range-slider" ng-model="propertyRange" min="0" max="25"></section>
-			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="propertyRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="propertyRange.to" /></li>
-			</ul>
+			<slider id="propertySlider"
+			ng-model="propertyLow"
+			ng-model-range="propertyHigh"
+			floor="0"
+			ceiling="25000000"></slider>
+			<span class="sliderTitle">Property Damage</span>
 		</div>
 		<!-- End Property Slider -->
 		<!-- Crop Slider -->
 		<div class="slideContainer">
-			<section data-range-slider class="range-slider" ng-model="cropRange" min="0" max="100"></section>
-			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="cropRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="cropRange.to" /></li>
-			</ul>
+			<slider id="cropSlider"
+			ng-model="cropLow"
+			ng-model-range="cropHigh"
+			floor="0"
+			ceiling="100000000"></slider>
+			<span class="sliderTitle">Crop Damage</span>
 		</div>
 		<!-- End Crop Slider -->
 	</div>
 	<!-- Type Filter -->
-	<input class="search" id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
+	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
 	<!-- End Type Filter -->
 	<!-- County Filter -->
-	<input class="search" id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
+	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
 	<!-- End County Filter -->
 </div>

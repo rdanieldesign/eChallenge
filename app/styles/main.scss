@@ -120,7 +120,7 @@ p {
   }
 
   .divider {
-    font-family: $cabin;
+    @include serif;
     background-color: $black;
     color: white;
     height: 15px;
@@ -183,6 +183,7 @@ p {
 
     h5 {
       @include headline;
+      word-wrap: break-word;
       color: $black;
       font-size: 1.2em;
       text-align: center;
@@ -240,6 +241,7 @@ p {
     color: white;
     width: 40%;
     margin-top: 0;
+    margin-bottom: 20px;
     margin-right: 2%;
     float: left;
   }
@@ -251,6 +253,7 @@ p {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
+    margin-bottom: 20px;
   }
 
   li {
@@ -274,16 +277,16 @@ p {
 // Filters
 
 .toggle {
+  float: right;
   font-family: $cabin;
   display: inline-block;
   color: white;
   padding-top: 10px;
-  margin-right: 20px;
+  margin-left: 20px;
   height: 40px;
   cursor: pointer;
   font-size: 1.2em;
   text-transform: uppercase;
-  border-bottom: 1px solid HSLA(0, 80%, 70%, 0);
   -webkit-transition:  all .2s ease-out;
   -moz-transition: all .2s ease-out;
   -o-transition: all .2s ease-out;
@@ -292,7 +295,6 @@ p {
 
   &:hover {
     color: $tornado;
-    border-bottom: 1px solid $tornado;
   }
 }
 
@@ -304,11 +306,11 @@ p {
   margin-bottom: 20px;
   height: 40px;
   width: 100%;
-  text-align: center;
+  text-align: right;
   cursor: pointer;
   font-size: 1.2em;
   text-transform: uppercase;
-  border-bottom: 1px solid HSLA(0, 80%, 70%, 0);
+  border-bottom: 1px solid $tornado;
   -webkit-transition:  all .2s ease-out;
   -moz-transition: all .2s ease-out;
   -o-transition: all .2s ease-out;
@@ -317,18 +319,33 @@ p {
 
   &:hover {
     color: $tornado;
-    border-bottom: 1px solid $tornado;
   }
 }
 
 .toolBar {
   background-color: HSLA(0, 0%, 0%, .85);
   display: block;
-  padding: 10px 20px;
+  padding: 10px 20px 0 20px;
   width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 99;
+
+  h1 {
+    @include headline;
+    float: left;
+    color: white;
+    margin-top: 2px;
+  }
+
+  .years {
+    @include serif;
+    float: left;
+    color: $tornado;
+    font-size: 1.4em;
+    margin-left: 14px;
+    margin-top: 5px;
+  }
 
   .search {
     @include serif;
@@ -348,7 +365,7 @@ p {
 }
 
 #countyFilter {
-
+  margin-bottom: 20px;
 }
 
 // Individual Sliders
