@@ -36542,7 +36542,7 @@ var disasters = [
 ];
 (function(){
 
-	angular.module('GAdisasters', ['ngRoute', 'vr.directives.slider'])
+	angular.module('GAdisasters', ['ngRoute', 'ngRangeSlider'])
 
 	.config(function($routeProvider){
 
@@ -36571,28 +36571,27 @@ var disasters = [
 
 		$scope.disasters2012 = HomeFactory.yearDivide(disasters, 2012);
 
-		$scope.deathsLow = 0;
-		$scope.deathsHigh = 8;
+		$scope.deathRange = { from: 0, to: 10};
+		$scope.injuryRange = { from: 0, to: 30};
+		$scope.propertyRange = { from: 0, to: 25};
+		$scope.cropRange = { from: 0, to: 100};
+
 		$scope.deathFilter = function(x){
-			return x.FATALITIES >= $scope.deathsLow && x.FATALITIES <= $scope.deathsHigh;
+			return x.FATALITIES >= $scope.deathRange.from && x.FATALITIES <= $scope.deathRange.to;
 		};
 
-		$scope.injuryLow = 0;
-		$scope.injuryHigh = 18;
 		$scope.injuryFilter = function(x){
-			return x.INJURIES >= $scope.injuryLow && x.INJURIES <= $scope.injuryHigh;
+			return x.INJURIES >= $scope.injuryRange.from && x.INJURIES <= $scope.injuryRange.to;
 		};
 
-		$scope.propertyLow = 0;
-		$scope.propertyHigh = 20000000;
 		$scope.propertyFilter = function(x){
-			return x.PROPERTY_DAMAGE >= $scope.propertyLow && x.PROPERTY_DAMAGE <= $scope.propertyHigh;
+			var damage = x.PROPERTY_DAMAGE / 1000000;
+			return damage >= $scope.propertyRange.from && damage <= $scope.propertyRange.to;
 		};
 
-		$scope.cropLow = 0;
-		$scope.cropHigh = 90000000;
 		$scope.cropFilter = function(x){
-			return x.CROP_DAMAGE >= $scope.cropLow && x.CROP_DAMAGE <= $scope.cropHigh;
+			var damage = x.CROP_DAMAGE / 1000000;
+			return damage >= $scope.cropRange.from && damage <= $scope.cropRange.to;
 		};
 
 		$scope.dropDown = function(event){

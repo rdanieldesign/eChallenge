@@ -118,49 +118,49 @@
 	<div class="sliders" ng-show="showTools">
 		<!-- Deaths Slider -->
 		<div class="slideContainer">
-			<slider id="deathSlider"
-			ng-model="deathsLow"
-			ng-model-range="deathsHigh"
-			floor="0"
-			ceiling="10"></slider>
+			<section data-range-slider class="range-slider" ng-model="deathRange" min="0" max="10"></section>
 			<span class="sliderTitle">Fatalities</span>
+			<ul class="from-to">
+				<li>{{ deathRange.from }}</li>
+				<li>{{ deathRange.to }}</li>
+			</ul>
 		</div>
 		<!-- End Deaths Slider -->
 		<!-- Injuries Slider -->
 		<div class="slideContainer">
-			<slider id="injurySlider"
-			ng-model="injuryLow"
-			ng-model-range="injuryHigh"
-			floor="0"
-			ceiling="20"></slider>
+			<section data-range-slider class="range-slider" ng-model="injuryRange" min="0" max="30"></section>
 			<span class="sliderTitle">Injuries</span>
+			<ul class="from-to">
+				<li>{{ injuryRange.from }}</li>
+				<li>{{ injuryRange.to }}</li>
+			</ul>
 		</div>
 		<!-- End Injury Slider -->
 		<!-- Property Slider -->
 		<div class="slideContainer">
-			<slider id="propertySlider"
-			ng-model="propertyLow"
-			ng-model-range="propertyHigh"
-			floor="0"
-			ceiling="25000000"></slider>
+			<section data-range-slider class="range-slider" ng-model="propertyRange" min="0" max="25"></section>
 			<span class="sliderTitle">Property Damage</span>
+			<ul class="from-to">
+				<li>${{ propertyRange.from }}<span ng-if="propertyRange.from > 0">,000,000</span></li>
+				<li>${{ propertyRange.to }}<span ng-if="propertyRange.to > 0">,000,000</span></li>
+			</ul>
 		</div>
 		<!-- End Property Slider -->
 		<!-- Crop Slider -->
 		<div class="slideContainer">
-			<slider id="cropSlider"
-			ng-model="cropLow"
-			ng-model-range="cropHigh"
-			floor="0"
-			ceiling="100000000"></slider>
+			<section data-range-slider class="range-slider" ng-model="cropRange" min="0" max="100"></section>
 			<span class="sliderTitle">Crop Damage</span>
+			<ul class="from-to">
+				<li>${{ cropRange.from }}<span ng-if="cropRange.from > 0">,000,000</span></li>
+				<li>${{ cropRange.to }}<span ng-if="cropRange.to > 0">,000,000</span></li>
+			</ul>
 		</div>
 		<!-- End Crop Slider -->
 	</div>
 	<!-- Type Filter -->
-	<input id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
+	<input class="search" id="typeFilter" type="text" ng-model="disasterType.HAZARD_TYPE_COMBO" placeholder="Filter by Type" ng-show="showTools">
 	<!-- End Type Filter -->
 	<!-- County Filter -->
-	<input id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
+	<input class="search" id="countyFilter" type="text" ng-model="disasterCounty.NAME" placeholder="Filter by County" ng-show="showTools">
 	<!-- End County Filter -->
 </div>
