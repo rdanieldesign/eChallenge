@@ -13,9 +13,9 @@
 		$scope.disasters2012 = HomeFactory.yearDivide(disasters, 2012);
 
 		$scope.deathRange = { from: 0, to: 10};
-		$scope.injuryRange = { from: 0, to: 20};
-		$scope.propertyRange = { from: 0, to: 20};
-		$scope.cropRange = { from: 0, to: 90};
+		$scope.injuryRange = { from: 0, to: 30};
+		$scope.propertyRange = { from: 0, to: 25};
+		$scope.cropRange = { from: 0, to: 100};
 
 		$scope.deathFilter = function(x){
 			return x.FATALITIES >= $scope.deathRange.from && x.FATALITIES <= $scope.deathRange.to;
