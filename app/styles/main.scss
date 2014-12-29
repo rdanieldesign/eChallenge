@@ -120,7 +120,7 @@ p {
   }
 
   .divider {
-    font-family: $cabin;
+    @include serif;
     background-color: $black;
     color: white;
     height: 15px;
@@ -183,6 +183,7 @@ p {
 
     h5 {
       @include headline;
+      word-wrap: break-word;
       color: $black;
       font-size: 1.2em;
       text-align: center;
