@@ -6,7 +6,7 @@ This tool presents a visual representation of every natural disaster that occurr
 
 * AngularJS
 * Underscore
-* [Venturocket's Angular Slider](https://github.com/Venturocket/angular-slider)
+* [Adam Timberlake's ngRangeSlider](https://github.com/Wildhoney/ngRangeSlider)
 * Data supplied by Emcien [here](https://github.com/emcien/jobs/blob/master/disasters.csv)
 
 #### Demo
