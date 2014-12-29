@@ -119,36 +119,40 @@
 		<!-- Deaths Slider -->
 		<div class="slideContainer">
 			<section data-range-slider class="range-slider" ng-model="deathRange" min="0" max="10"></section>
+			<span class="sliderTitle">Fatalities</span>
 			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="deathRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="deathRange.to" /></li>
+				<li>{{ deathRange.from }}</li>
+				<li>{{ deathRange.to }}</li>
 			</ul>
 		</div>
 		<!-- End Deaths Slider -->
 		<!-- Injuries Slider -->
 		<div class="slideContainer">
 			<section data-range-slider class="range-slider" ng-model="injuryRange" min="0" max="20"></section>
+			<span class="sliderTitle">Injuries</span>
 			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="injuryRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="injuryRange.to" /></li>
+				<li>{{ injuryRange.from }}</li>
+				<li>{{ injuryRange.to }}</li>
 			</ul>
 		</div>
 		<!-- End Injury Slider -->
 		<!-- Property Slider -->
 		<div class="slideContainer">
 			<section data-range-slider class="range-slider" ng-model="propertyRange" min="0" max="25"></section>
+			<span class="sliderTitle">Property Damage</span>
 			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="propertyRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="propertyRange.to" /></li>
+				<li>${{ propertyRange.from }}<span ng-if="propertyRange.from > 0">,000,000</span></li>
+				<li>${{ propertyRange.to }}<span ng-if="propertyRange.to > 0">,000,000</span></li>
 			</ul>
 		</div>
 		<!-- End Property Slider -->
 		<!-- Crop Slider -->
 		<div class="slideContainer">
 			<section data-range-slider class="range-slider" ng-model="cropRange" min="0" max="100"></section>
+			<span class="sliderTitle">Crop Damage</span>
 			<ul class="from-to">
-				<li><label>From:</label><input type="number" ng-model="cropRange.from" /></li>
-				<li><label>To:</label><input type="number" ng-model="cropRange.to" /></li>
+				<li>${{ cropRange.from }}<span ng-if="cropRange.from > 0">,000,000</span></li>
+				<li>${{ cropRange.to }}<span ng-if="cropRange.to > 0">,000,000</span></li>
 			</ul>
 		</div>
 		<!-- End Crop Slider -->
