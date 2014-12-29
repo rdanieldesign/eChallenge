@@ -4,23 +4,7 @@
 
 // Partials
 @import 'colors';
-
-// Mixins
-
-@mixin headline {
-  font-family: $cabin;
-  text-transform: uppercase;
-}
-
-@mixin serif {
-  font-style: italic;
-  font-family: Georgia, sans-serif;
-  letter-spacing: 0.5px;
-}
-
-// Fonts
-$cabin: 'Cabin', sans-serif;
-
+@import 'fonts';
 
 // Standards
 
@@ -558,3 +542,7 @@ p {
   background-color: $storm;
   color: $storm;
 }
+
+// Media Queries
+
+@import 'media';

@@ -1,0 +1,139 @@
+@media (max-width: 700px){
+
+	.toggle {
+		float: left;
+		width: 50%;
+		text-align: center;
+		padding-top: 10px;
+		margin: 10px 0 0 0;
+	}
+
+	.toolBar {
+
+		h1 {
+			text-align: center;
+			float: none;
+		}
+
+		.years {
+			text-align: center;
+			float: none;
+			display: block;
+			margin-left: 0;
+			margin-top: 5px;
+		}
+	}
+}
+
+@media (max-width: 600px){
+
+	.grid {
+		margin-bottom: 120px;
+	}
+
+	// Filters
+
+	.toolBar {
+
+		.search {
+			width: 100%;
+		}
+	}
+
+	// Individual Sliders
+
+	.sliders {
+		margin: 20px 0;
+		width: 100%;
+		position: relative;
+	}
+
+	.slideContainer {
+		position: relative;
+		display: block;
+		height: 50px;
+	}
+
+	// Key
+
+	.key {
+
+		p {
+			color: white;
+			width: 100%;
+			margin-top: 10px;
+			margin-bottom: 30px;
+			margin-right: 0;
+		}
+
+		ul {
+			width: 100%;
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+		}
+	}
+}
+
+@media (max-width: 400px){
+
+	/* .grid {
+
+		.dropDown {
+			width: 50vw;
+		}
+
+		.leftBox {
+
+			.dropDown {
+				width: 50vw;
+				left: auto;
+				margin-left: 0;
+
+				&::before {
+					left: 0;
+				}
+			}
+		}
+
+		.rightBox {
+
+			.dropDown {
+				width: 50vw;
+				right: auto;
+				margin-left: 0;
+
+				&::before {
+					right: 0;
+					left: auto;
+				}
+			}
+		}
+	} */
+
+	// Filters
+
+	.toggle {
+		float: left;
+		width: 50%;
+		text-align: center;
+		padding-top: 10px;
+		margin: 10px 0 0 0;
+	}
+
+	.toggleHeader {
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	// Key
+
+	.key {
+
+		ul {
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
+	}
+}

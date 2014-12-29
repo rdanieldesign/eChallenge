@@ -1,0 +1,12 @@
+$cabin: 'Cabin', sans-serif;
+
+@mixin headline {
+	font-family: $cabin;
+	text-transform: uppercase;
+}
+
+@mixin serif {
+	font-style: italic;
+	font-family: Georgia, sans-serif;
+	letter-spacing: 0.5px;
+}
