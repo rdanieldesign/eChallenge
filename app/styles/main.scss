@@ -5,6 +5,7 @@
 // Partials
 @import 'colors';
 @import 'fonts';
+@import 'mixins';
 
 // Standards
 
@@ -85,7 +86,6 @@ p {
       height: 0;
       border-style: solid;
       border-width: 7.5px 0 7.5px 6px;
-      border-color: transparent transparent transparent inherit;
       z-index: 5;
     }
 
@@ -479,68 +479,55 @@ p {
 // Data Styles
 
 .tornado {
-  background-color: $tornado;
-  color: $tornado;
+  @include theme($tornado);
 }
 
 .hail {
-  background-color: $hail;
-  color: $hail;
+  @include theme($hail);
 }
 
 .storm-wind {
-  background-color: $storm-wind;
-  color: $storm-wind;
+  @include theme($storm-wind);
 }
 
 .lightning {
-  background-color: $lightning;
-  color: $lightning;
+  @include theme($lightning);
 }
 
 .wildfire {
-  background-color: $wildfire;
-  color: $wildfire;
+  @include theme($wildfire);
 }
 
 .hurricane {
-  background-color: $hurricane;
-  color: $hurricane;
+  @include theme($hurricane);
 }
 
 .flooding {
-  background-color: $flooding;
-  color: $flooding;
+  @include theme($flooding);
 }
 
 .wind {
-  background-color: $wind;
-  color: $wind;
+  @include theme($wind);
 }
 
 .winter {
-  background-color: $winter;
-  color: $winter;
+  @include theme($winter);
 }
 
 .heat {
-  background-color: $heat;
-  color: $heat;
+  @include theme($heat);
 }
 
 .coastal {
-  background-color: $coastal;
-  color: $coastal;
+  @include theme($coastal);
 }
 
 .drought {
-  background-color: $drought;
-  color: $drought;
+  @include theme($drought);
 }
 
 .storm {
-  background-color: $storm;
-  color: $storm;
+  @include theme($storm);
 }
 
 // Media Queries

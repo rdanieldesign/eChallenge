@@ -1,0 +1,10 @@
+@mixin theme ($color-theme) {
+	background-color: $color-theme;
+    border-color: $color-theme;
+    border-width: 0;
+    color: $color-theme;
+
+	&::after {
+		border-color: transparent transparent transparent $color-theme;
+	}
+}
